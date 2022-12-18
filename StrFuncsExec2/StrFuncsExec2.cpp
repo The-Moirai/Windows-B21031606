@@ -9,4 +9,6 @@ int main()
     std::cout << MyStrcmp("Class", "Classes");
     std::cout << MyStrcmp("Class", "Class");
     std::cout << MyStrcmp("Class", "C");
+    std::cout << MyStrcmp("Class", NULL);
+    std::cout << MyStrcmp(NULL, NULL);
 }
