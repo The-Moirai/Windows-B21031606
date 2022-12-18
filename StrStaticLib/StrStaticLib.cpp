@@ -5,11 +5,14 @@
 #include "pch.h"
 namespace StringFuncs
 {
-	char* strcpy(char* src, int x = 0)
+	char* strcpy(char* src)
 	{
 		int i, n;
 		n = sizeof(src);
+		
 		char* NewString = (char*)malloc(sizeof(char) * n);
+		if (src==NULL)
+			return NewString = NULL;
 		for (i = 0; *(src + i) != '\0'; i++)
 		{
 			*(NewString + i) = *(src + i);
