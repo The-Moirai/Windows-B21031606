@@ -9,12 +9,11 @@ using namespace std;
 int main()
 {
     cout << "Hello World!\n";
-    char* str_1 = NULL;
-    char *str_2 = NULL;
-    str_1 = strcpy(str_2);
-    printf("%s\n",str_1);
-    delete str_1;
-    
+    char* str1 = NULL;
+    char  str2[] = "";
+    str1 = strcpy(str2);
+    cout << str1;
+    delete str1;
 }
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
 // 调试程序: F5 或调试 >“开始调试”菜单
