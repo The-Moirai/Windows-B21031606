@@ -2,11 +2,17 @@
 //
 
 #include <iostream>
-#   include <Windows.h>
-
-
+#include<windows.h>
+#include <vector>
+typedef int(*lpAddFun) (int, int);
 int main()
 {
+    HINSTANCE hdll;
+    hdll = LoadLibrary(L"StrDll.dll"); //加载dll
+    printf("hdll:%p\n", hdll);//打印dll地址
+    if (hdll == NULL) {
+        FreeLibrary(hdll);//释放dll
+    }
     typedef int (*PMyStrcmp)(const char* str1, const char* str2);
 
     HMODULE hDll = LoadLibrary(L"StrDll.dll");
@@ -18,6 +24,7 @@ int main()
     }
 
     FreeLibrary(hDll);
+
     std::cout << "Hello World!\n";
     std::cout << MyStrcmp("Class", "Classes");
     std::cout << MyStrcmp("Class", "Class");
